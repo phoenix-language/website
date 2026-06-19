@@ -13,11 +13,12 @@ dev:
 build:
     pnpm run build
 
+# Preview the production build (run build first).
 preview:
-    pnpm run preview
+    pnpm run preview -- --port {{port}}
 
 open:
-    open "http://localhost:{{port}}"
+    open "http://localhost:{{port}}/website/"
 
 # Submodule often checks out detached HEAD — attach to main before editing.
 branch:

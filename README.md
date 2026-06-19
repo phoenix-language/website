@@ -1,29 +1,36 @@
-# Rspress website
+# Phoenix website
 
-## Setup
+Marketing site and docs for [Phoenix](https://github.com/phoenix-language/phoenix), built with [Rspress](https://rspress.rs/).
 
-Install the dependencies:
+**Live site:** https://phoenix-language.github.io/website/
 
-```bash
-npm install
-```
+## Local development
 
-## Get started
-
-Start the dev server:
+From the phoenix repo root:
 
 ```bash
-npm run dev
+just website install
+just website dev
 ```
 
-Build the website for production:
+Or from this directory:
 
 ```bash
-npm run build
+pnpm install
+pnpm run dev
 ```
 
-Preview the production build locally:
+The dev server uses the same `/website/` base path as production. Open http://localhost:5173/website/
+
+## Build
 
 ```bash
-npm run preview
+pnpm run build   # output → doc_build/
+pnpm run preview
 ```
+
+## Deployment
+
+GitHub Actions builds Rspress and deploys `doc_build/` to GitHub Pages on every push to `main`.
+
+Repository **Settings → Pages → Build and deployment → Source** must be **GitHub Actions** (not “Deploy from a branch”).
