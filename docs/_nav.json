@@ -1,0 +1,25 @@
+[
+  {
+    "text": "Docs",
+    "link": "/guide/start/introduction",
+    "activeMatch": "/guide/"
+  },
+  {
+    "text": "Get Started",
+    "link": "/guide/start/getting-started",
+    "activeMatch": "/guide/start/getting-started"
+  },
+  {
+    "text": "CLI",
+    "link": "/api/commands",
+    "activeMatch": "/api/"
+  },
+  {
+    "text": "GitHub",
+    "link": "https://github.com/phoenix-language/phoenix"
+  },
+  {
+    "text": "Discord",
+    "link": "https://discord.com/invite/U4FmBUHzEP"
+  }
+]

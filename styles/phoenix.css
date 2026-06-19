@@ -1,0 +1,63 @@
+@import './fonts.css';
+
+/* Phoenix design tokens — crimson accent, dark-first */
+
+:where(:root) {
+  --phx-font-sans: 'Inter', system-ui, sans-serif;
+  --phx-font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --phx-space-1: 16px;
+  --phx-space-2: 24px;
+  --phx-space-3: 32px;
+  --phx-space-4: 48px;
+  --phx-space-5: 64px;
+  --phx-space-6: 96px;
+  --phx-space-7: 128px;
+
+  --rp-c-brand: #c41e3a;
+  --rp-c-brand-light: #d42e4a;
+  --rp-c-brand-lighter: rgba(196, 30, 58, 0.14);
+  --rp-c-brand-dark: #b91c1c;
+  --rp-c-brand-darker: #991b1b;
+  --rp-c-brand-tint: rgba(196, 30, 58, 0.12);
+}
+
+:where(html.rp-dark) {
+  --phx-bg: #09090b;
+  --phx-surface: #111113;
+  --phx-text: #fafafa;
+  --phx-muted: #71717a;
+  --phx-border: rgba(255, 255, 255, 0.08);
+  --phx-accent: #c41e3a;
+  --phx-accent-dim: rgba(196, 30, 58, 0.15);
+  --phx-syntax-type: #93c5fd;
+  --phx-syntax-ok: rgba(74, 222, 128, 0.8);
+
+  --rp-home-background-bg: var(--phx-bg);
+}
+
+:where(html:not(.rp-dark)) {
+  --phx-bg: #fafafa;
+  --phx-surface: #ffffff;
+  --phx-text: #18181b;
+  --phx-muted: #52525b;
+  --phx-border: rgba(0, 0, 0, 0.08);
+  --phx-accent: #b91c1c;
+  --phx-accent-dim: rgba(196, 30, 58, 0.1);
+  --phx-syntax-type: #2563eb;
+  --phx-syntax-ok: rgba(22, 163, 74, 0.85);
+
+  --rp-home-background-bg: var(--phx-bg);
+}
+
+body {
+  font-family: var(--phx-font-sans);
+}
+
+.rp-nav {
+  font-family: var(--phx-font-sans);
+}
+
+.rp-home-background {
+  background: var(--phx-bg) !important;
+}
