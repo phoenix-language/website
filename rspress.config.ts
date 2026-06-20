@@ -1,8 +1,11 @@
 import * as path from 'node:path';
 import { defineConfig } from '@rspress/core';
 
+// GitHub Pages serves at /website/; Vercel serves at the domain root.
+const base = process.env.VERCEL ? '/' : '/website/';
+
 export default defineConfig({
-  base: '/website/',
+  base,
   llms: true,
   root: path.join(__dirname, 'docs'),
   lang: 'en',
