@@ -134,6 +134,13 @@ function renderVisibleChars(chars: CharToken[], visibleCount: number) {
   });
 }
 
+const STATIC_CODE = `add :: (a: s32, b: s32) => s32 { a + b };
+
+main :: () => {
+    const sum: s32 = add(10, 2);
+    const _ = sum;
+};`;
+
 const TYPING_INTERVAL_MS = 45;
 
 export function TypingCode() {
@@ -169,7 +176,7 @@ export function TypingCode() {
 
   return (
     <figure className="phx-code">
-      <pre className="phx-code__pre">
+      <pre aria-hidden="true" className="phx-code__pre">
         <code>{renderVisibleChars(chars, visibleCount)}</code>
         {!done && (
           <span aria-hidden="true" className="phx-code__cursor">
@@ -181,6 +188,9 @@ export function TypingCode() {
             |
           </span>
         )}
+      </pre>
+      <pre className="phx-sr-only">
+        <code>{STATIC_CODE}</code>
       </pre>
       <figcaption className="phx-sr-only">
         Example Phoenix source code demonstrating a typed add function and main
@@ -195,6 +205,7 @@ export function TypingCode() {
         <span className="phx-code__status-ok">ok</span>
         <span className="phx-code__status-detail"> (0 errors)</span>
       </div>
+      <p className="phx-sr-only">Example check result: phx check main.phx — ok (0 errors)</p>
     </figure>
   );
 }

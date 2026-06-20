@@ -48,6 +48,7 @@ function FeatureRow({
         target="_blank"
       >
         {content}
+        <span className="phx-sr-only"> (opens in new tab)</span>
       </a>
     );
   }

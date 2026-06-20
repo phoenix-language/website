@@ -66,7 +66,7 @@ export function InstallStrip() {
             {copied ? 'copied' : 'copy'}
           </button>
           <span aria-live="polite" className="phx-sr-only">
-            {copied ? 'Copied to clipboard' : ''}
+            {copied ? 'Install command copied to clipboard' : ''}
           </span>
         </div>
         <Link className="phx-install__link" href="/guide/start/getting-started">

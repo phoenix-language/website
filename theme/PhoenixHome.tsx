@@ -62,6 +62,7 @@ function HeroActionButton({ action }: { action: HeroAction }) {
     return (
       <a className={className} href={action.link} rel="noopener noreferrer" target="_blank">
         {action.text}
+        <span className="phx-sr-only"> (opens in new tab)</span>
       </a>
     );
   }
@@ -129,9 +130,11 @@ export default function HomeLayout() {
             <Link href="/guide/start/introduction">Docs</Link>
             <a href="https://github.com/phoenix-language/phoenix" rel="noopener noreferrer" target="_blank">
               GitHub
+              <span className="phx-sr-only"> (opens in new tab)</span>
             </a>
             <a href="https://discord.com/invite/U4FmBUHzEP" rel="noopener noreferrer" target="_blank">
               Discord
+              <span className="phx-sr-only"> (opens in new tab)</span>
             </a>
           </nav>
         </footer>
