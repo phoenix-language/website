@@ -168,13 +168,26 @@ export function TypingCode() {
   }, [chars.length, visibleCount]);
 
   return (
-    <div className="phx-code">
+    <figure className="phx-code">
       <pre className="phx-code__pre">
         <code>{renderVisibleChars(chars, visibleCount)}</code>
-        {!done && <span className="phx-code__cursor">|</span>}
-        {done && <span className="phx-code__cursor phx-code__cursor--hold">|</span>}
+        {!done && (
+          <span aria-hidden="true" className="phx-code__cursor">
+            |
+          </span>
+        )}
+        {done && (
+          <span aria-hidden="true" className="phx-code__cursor phx-code__cursor--hold">
+            |
+          </span>
+        )}
       </pre>
+      <figcaption className="phx-sr-only">
+        Example Phoenix source code demonstrating a typed add function and main
+        entry point, followed by a successful phx check result.
+      </figcaption>
       <div
+        aria-hidden={!showStatus}
         className={`phx-code__status${showStatus ? ' phx-code__status--visible' : ''}`}
       >
         <span className="phx-code__status-cmd">phx check main.phx</span>
@@ -182,6 +195,6 @@ export function TypingCode() {
         <span className="phx-code__status-ok">ok</span>
         <span className="phx-code__status-detail"> (0 errors)</span>
       </div>
-    </div>
+    </figure>
   );
 }

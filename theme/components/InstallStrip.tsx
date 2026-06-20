@@ -47,20 +47,27 @@ export function InstallStrip() {
 
   return (
     <section
+      aria-labelledby="phx-install-heading"
       className={`phx-install${visible ? ' phx-install--visible' : ''}`}
       ref={ref}
     >
       <div className="phx-install__inner">
-        <p className="phx-install__label">Get started</p>
+        <h2 className="phx-install__label" id="phx-install-heading">
+          Get started
+        </h2>
         <div className="phx-install__cmd-row">
           <code className="phx-install__cmd">{INSTALL_CMD}</code>
           <button
+            aria-label="Copy install command to clipboard"
             className="phx-install__copy"
             onClick={() => void handleCopy()}
             type="button"
           >
             {copied ? 'copied' : 'copy'}
           </button>
+          <span aria-live="polite" className="phx-sr-only">
+            {copied ? 'Copied to clipboard' : ''}
+          </span>
         </div>
         <Link className="phx-install__link" href="/guide/start/getting-started">
           Read the docs →

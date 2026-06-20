@@ -149,6 +149,7 @@
 /* Code panel */
 
 .phx-code {
+  margin: 0;
   background: var(--phx-surface);
   border: 1px solid var(--phx-border);
   border-radius: 4px;
@@ -445,6 +446,10 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .phx-skip-link {
+    transition: none;
+  }
+
   .phx-feature,
   .phx-install,
   .phx-code__status {

@@ -85,21 +85,22 @@ export default function HomeLayout() {
   return (
     <Fragment>
       <HomeBackground />
-      <div className="phx-home">
+      <main className="phx-home" id="main-content" tabIndex={-1}>
         <div className="phx-home__mesh" aria-hidden="true" />
         <div className="phx-home__noise" aria-hidden="true" />
 
-        <section className="phx-hero">
+        <section aria-labelledby="phx-hero-heading" className="phx-hero">
           <div className="phx-hero__inner">
             <div className="phx-hero__code-col">
               <TypingCode />
             </div>
             <div className="phx-hero__text-col">
               <div className="phx-hero__title-row">
-                <h1 className="phx-hero__wordmark">{hero.name ?? 'Phoenix'}</h1>
+                <h1 className="phx-hero__wordmark" id="phx-hero-heading">
+                  {hero.name ?? 'Phoenix'}
+                </h1>
                 <img
-                  alt=""
-                  aria-hidden="true"
+                  alt="Phoenix logo"
                   className="phx-hero__logo"
                   height={48}
                   src="/phoenix-logo.png"
@@ -134,7 +135,7 @@ export default function HomeLayout() {
             </a>
           </nav>
         </footer>
-      </div>
+      </main>
     </Fragment>
   );
 }
