@@ -48,6 +48,7 @@ function FeatureRow({
         target="_blank"
       >
         {content}
+        <span className="phx-sr-only"> (opens in new tab)</span>
       </a>
     );
   }
@@ -90,7 +91,14 @@ export function FeatureStrip({ features }: FeatureStripProps) {
   }, []);
 
   return (
-    <section className="phx-features" ref={ref}>
+    <section
+      aria-labelledby="phx-features-heading"
+      className="phx-features"
+      ref={ref}
+    >
+      <h2 className="phx-sr-only" id="phx-features-heading">
+        Features
+      </h2>
       <div className="phx-features__inner">
         {features.map((feature, index) => (
           <FeatureRow
